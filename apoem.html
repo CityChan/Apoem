@@ -439,9 +439,13 @@
             resultYes.style.display = 'flex';
         });
 
-        btnNo.addEventListener('click', () => {
-            questionContainer.style.display = 'none';
-            resultNo.style.display = 'flex';
+        btnNo.addEventListener('click', (e) => {
+            e.preventDefault();
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
+            btnNo.style.position = 'absolute';
+            btnNo.style.left = x + 'px';
+            btnNo.style.top = y + 'px';
         });
 
         // 星星评分系统
